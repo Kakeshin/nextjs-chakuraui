@@ -6,7 +6,7 @@ const Page = () => {
     <Box bg="white" mb="1px">
       <HStack p="10px">
         <NextLink href={"/"}>
-          <Heading mr="20px">Kakeshin Blog</Heading>
+          <Heading mr="20px">Kakeshin デブ</Heading>
         </NextLink>
         <NextLink href={"/"}>
           <Button colorScheme="green" variant="outline">

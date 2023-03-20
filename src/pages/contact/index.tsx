@@ -19,7 +19,11 @@ import {
 } from "@chakra-ui/react";
 import { MdEmail, MdLocationOn, MdOutlineEmail } from "react-icons/md";
 import { BsGithub, BsDiscord, BsPerson, BsTwitter } from "react-icons/bs";
-import Bread from "../bread/index";
+import Bread from "@/pages/bread/index";
+
+const buttonHandler = () => {
+  console.log("🌈");
+};
 
 const Page = () => {
   return (
@@ -112,44 +116,44 @@ const Page = () => {
                   <Box bg="white" borderRadius="lg">
                     <Box m={8} color="#0B0E3F">
                       <VStack spacing={5}>
-                        <FormControl id="name">
-                          <FormLabel>Your Name</FormLabel>
-                          <InputGroup borderColor="#E0E1E7">
-                            <InputLeftElement pointerEvents="none">
-                              <BsPerson color="gray.800" />
-                            </InputLeftElement>
-                            <Input type="text" size="md" isRequired />
-                          </InputGroup>
-                        </FormControl>
-                        <FormControl id="name">
-                          <FormLabel>Mail</FormLabel>
-                          <InputGroup borderColor="#E0E1E7">
-                            <InputLeftElement pointerEvents="none">
-                              {<MdOutlineEmail color="gray.800" />}
-                            </InputLeftElement>
-                            <Input type="text" size="md" isRequired />
-                          </InputGroup>
-                        </FormControl>
-                        <FormControl id="name">
-                          <FormLabel>Message</FormLabel>
-                          <Textarea
-                            borderColor="gray.300"
-                            _hover={{
-                              borderRadius: "gray.300",
-                            }}
-                            placeholder="message"
-                            isRequired
-                          />
-                        </FormControl>
-                        <FormControl id="name" float="right">
-                          <Button
-                            variant="solid"
-                            bg="#0D74FF"
-                            color="white"
-                            _hover={{}}
-                          >
-                            Send Message
-                          </Button>
+                        <FormControl onSubmit={buttonHandler}>
+                          <FormControl id="name" isRequired>
+                            <FormLabel>Your Name</FormLabel>
+                            <InputGroup borderColor="#E0E1E7">
+                              <InputLeftElement pointerEvents="none">
+                                <BsPerson color="gray.800" />
+                              </InputLeftElement>
+                              <Input type="text" size="md" />
+                            </InputGroup>
+                          </FormControl>
+                          <FormControl id="email" isRequired>
+                            <FormLabel>Mail</FormLabel>
+                            <InputGroup borderColor="#E0E1E7">
+                              <InputLeftElement pointerEvents="none">
+                                {<MdOutlineEmail color="gray.800" />}
+                              </InputLeftElement>
+                              <Input type="email" size="md" />
+                            </InputGroup>
+                          </FormControl>
+                          <FormControl id="message" isRequired>
+                            <FormLabel>Message</FormLabel>
+                            <Textarea
+                              borderColor="gray.300"
+                              placeholder="message"
+                            />
+                          </FormControl>
+                          <FormControl id="name" float="right">
+                            <Button
+                              variant="solid"
+                              bg="#0D74FF"
+                              color="white"
+                              type="submit"
+                              onClick={buttonHandler}
+                              isDisabled={true}
+                            >
+                              Send Message
+                            </Button>
+                          </FormControl>
                         </FormControl>
                       </VStack>
                     </Box>

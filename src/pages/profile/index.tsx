@@ -1,5 +1,5 @@
 import { Box } from "@chakra-ui/react";
-import Bread from "../bread/index";
+import Bread from "@/pages/bread/index";
 
 const Page = () => {
   return (
