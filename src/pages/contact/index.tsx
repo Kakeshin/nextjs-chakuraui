@@ -20,12 +20,38 @@ import {
 import { MdEmail, MdLocationOn, MdOutlineEmail } from "react-icons/md";
 import { BsGithub, BsDiscord, BsPerson, BsTwitter } from "react-icons/bs";
 import Bread from "@/pages/bread/index";
-
-const buttonHandler = () => {
-  console.log("🌈");
-};
+import { useState } from "react";
+import axios from "axios";
 
 const Page = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const isDisabled = !name || !email || !message;
+
+  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setName(e.target.value);
+  };
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
+  };
+  const handleMessageChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setMessage(e.target.value);
+  };
+  const buttonHandler = async () => {
+    try {
+      const { data } = await axios.post("/api/hello", {
+        name,
+        email,
+        message,
+      });
+
+      console.log("#OK", data);
+    } catch {
+      console.log("#Error");
+    }
+  };
+
   return (
     <Box bg="clear" px="15px" py="5px">
       <Bread title="Contact" />
@@ -116,14 +142,19 @@ const Page = () => {
                   <Box bg="white" borderRadius="lg">
                     <Box m={8} color="#0B0E3F">
                       <VStack spacing={5}>
-                        <FormControl onSubmit={buttonHandler}>
+                        <FormControl>
                           <FormControl id="name" isRequired>
                             <FormLabel>Your Name</FormLabel>
                             <InputGroup borderColor="#E0E1E7">
                               <InputLeftElement pointerEvents="none">
                                 <BsPerson color="gray.800" />
                               </InputLeftElement>
-                              <Input type="text" size="md" />
+                              <Input
+                                type="text"
+                                size="md"
+                                value={name}
+                                onChange={handleNameChange}
+                              />
                             </InputGroup>
                           </FormControl>
                           <FormControl id="email" isRequired>
@@ -132,7 +163,12 @@ const Page = () => {
                               <InputLeftElement pointerEvents="none">
                                 {<MdOutlineEmail color="gray.800" />}
                               </InputLeftElement>
-                              <Input type="email" size="md" />
+                              <Input
+                                type="email"
+                                size="md"
+                                value={email}
+                                onChange={handleEmailChange}
+                              />
                             </InputGroup>
                           </FormControl>
                           <FormControl id="message" isRequired>
@@ -140,6 +176,8 @@ const Page = () => {
                             <Textarea
                               borderColor="gray.300"
                               placeholder="message"
+                              value={message}
+                              onChange={handleMessageChange}
                             />
                           </FormControl>
                           <FormControl id="name" float="right">
@@ -149,7 +187,7 @@ const Page = () => {
                               color="white"
                               type="submit"
                               onClick={buttonHandler}
-                              isDisabled={true}
+                              isDisabled={isDisabled}
                             >
                               Send Message
                             </Button>
