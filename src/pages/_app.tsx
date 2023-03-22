@@ -33,7 +33,7 @@ const App = ({ Component, pageProps }: AppProps) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="keyword"
-          content="かけしん, カケシン, kakeshin, Kakeshin, dev, Dev, kakeshin dev, kekeshin Dev, kakeshinDev, Kakeshin Dev, Kakeshin dev, KakeshinDev"
+          content="かけしん, カケシン, kakeshin, Kakeshin, dev, Dev, kakeshin dev, kakeshin Dev, kakeshinDev, Kakeshin Dev, Kakeshin dev, KakeshinDev"
         />
         <meta
           name="description"

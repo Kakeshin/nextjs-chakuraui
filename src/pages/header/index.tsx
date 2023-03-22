@@ -8,26 +8,28 @@ const Page = () => {
         <NextLink href={"/"}>
           <Heading mr="20px">Kakeshin Dev</Heading>
         </NextLink>
-        <NextLink href={"/"}>
-          <Button colorScheme="green" variant="outline">
-            Home
-          </Button>
-        </NextLink>
-        <NextLink href={"/profile"}>
-          <Button colorScheme="green" variant="outline">
-            Profile
-          </Button>
-        </NextLink>
-        <NextLink href={"/portfolio"}>
-          <Button colorScheme="green" variant="outline">
-            Portfolio
-          </Button>
-        </NextLink>
-        <NextLink href={"/contact"}>
-          <Button colorScheme="green" variant="outline">
-            Contact
-          </Button>
-        </NextLink>
+        <Box>
+          <NextLink href={"/"}>
+            <Button colorScheme="green" variant="outline">
+              Home
+            </Button>
+          </NextLink>
+          <NextLink href={"/profile"}>
+            <Button colorScheme="green" variant="outline">
+              Profile
+            </Button>
+          </NextLink>
+          <NextLink href={"/portfolio"}>
+            <Button colorScheme="green" variant="outline">
+              Portfolio
+            </Button>
+          </NextLink>
+          <NextLink href={"/contact"}>
+            <Button colorScheme="green" variant="outline">
+              Contact
+            </Button>
+          </NextLink>
+        </Box>
       </HStack>
     </Box>
   );
