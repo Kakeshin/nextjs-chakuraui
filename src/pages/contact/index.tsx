@@ -18,9 +18,7 @@ import {
   Textarea,
 } from '@chakra-ui/react';
 import { MdEmail, MdLocationOn, MdOutlineEmail } from 'react-icons/md';
-import {
-  BsGithub, BsDiscord, BsPerson, BsTwitter,
-} from 'react-icons/bs';
+import { BsGithub, BsDiscord, BsPerson, BsTwitter } from 'react-icons/bs';
 import Bread from '@/pages/bread/index';
 import { useState } from 'react';
 import axios from 'axios';
@@ -47,12 +45,8 @@ function Page() {
         email,
         message,
       })
-      .then((res) => {
-        console.log(res.data);
-      })
-      .catch((err) => {
-        console.log(err.response);
-      });
+      .then(() => {})
+      .catch(() => {});
   };
 
   return (
@@ -70,9 +64,13 @@ function Page() {
             rounded="md"
           >
             <Box p={4}>
-              <Wrap spacing={{
-                base: 20, sm: 3, md: 5, lg: 20,
-              }}
+              <Wrap
+                spacing={{
+                  base: 20,
+                  sm: 3,
+                  md: 5,
+                  lg: 20,
+                }}
               >
                 <WrapItem>
                   <Box>
@@ -80,9 +78,13 @@ function Page() {
                     <Text mt={{ sm: 3, md: 3, lg: 5 }} color="gray.500">
                       Fill up the form below to contact
                     </Text>
-                    <Box py={{
-                      base: 5, sm: 5, md: 8, lg: 10,
-                    }}
+                    <Box
+                      py={{
+                        base: 5,
+                        sm: 5,
+                        md: 8,
+                        lg: 10,
+                      }}
                     >
                       <VStack pl={0} spacing={3} alignItems="flex-start">
                         <Button
