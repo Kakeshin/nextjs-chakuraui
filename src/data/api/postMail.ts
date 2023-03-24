@@ -12,7 +12,7 @@ const postMail = async (
     const result = await axios.post(url, {
       token: process.env.MAILER_TOKEN,
       name: mailerRequest.name,
-      address: mailerRequest.email,
+      address: mailerRequest.address,
       message: mailerRequest.message,
     });
 

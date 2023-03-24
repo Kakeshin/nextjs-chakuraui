@@ -25,15 +25,15 @@ import axios from 'axios';
 
 function Page() {
   const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
+  const [address, setAddress] = useState('');
   const [message, setMessage] = useState('');
-  const isDisabled = !name || !email || !message;
+  const isDisabled = !name || !address || !message;
 
   const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value);
   };
-  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setEmail(e.target.value);
+  const handleAddressChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setAddress(e.target.value);
   };
   const handleMessageChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setMessage(e.target.value);
@@ -42,7 +42,7 @@ function Page() {
     await axios
       .post('./api/mailer', {
         name,
-        email,
+        address,
         message,
       })
       .then(() => {})
@@ -177,8 +177,8 @@ function Page() {
                               <Input
                                 type="email"
                                 size="md"
-                                value={email}
-                                onChange={handleEmailChange}
+                                value={address}
+                                onChange={handleAddressChange}
                               />
                             </InputGroup>
                           </FormControl>

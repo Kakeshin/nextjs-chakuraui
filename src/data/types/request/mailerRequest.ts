@@ -1,5 +1,5 @@
 export interface MailerRequest {
   name: string;
-  email: string;
+  address: string;
   message: string;
 }
