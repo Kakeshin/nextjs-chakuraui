@@ -12,7 +12,7 @@ const handler = async (
   }
   const data = await mailerRepository.postMail({
     name: req.body.name,
-    email: req.body.email,
+    address: req.body.address,
     message: req.body.message,
   });
 
