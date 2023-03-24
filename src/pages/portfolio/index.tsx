@@ -14,7 +14,7 @@ function Page() {
   };
 
   const postHandler = async () => {
-    const data = await axios.get('./api/hello');
+    const data = await axios.get('./api/postHello');
 
     setPostName(`Response: ${data.data.name}`);
   };
