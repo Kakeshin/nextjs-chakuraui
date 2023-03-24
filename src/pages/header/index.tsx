@@ -1,30 +1,32 @@
-import { Heading, HStack, Box, Button } from "@chakra-ui/react";
-import NextLink from "next/link";
+import {
+  Heading, HStack, Box, Button,
+} from '@chakra-ui/react';
+import NextLink from 'next/link';
 
-const Page = () => {
+function Page() {
   return (
     <Box bg="white" mb="1px">
       <HStack p="10px">
-        <NextLink href={"/"}>
+        <NextLink href="/">
           <Heading mr="20px">Kakeshin Dev</Heading>
         </NextLink>
         <Box>
-          <NextLink href={"/"}>
+          <NextLink href="/">
             <Button colorScheme="green" variant="outline">
               Home
             </Button>
           </NextLink>
-          <NextLink href={"/profile"}>
+          <NextLink href="/profile">
             <Button colorScheme="green" variant="outline">
               Profile
             </Button>
           </NextLink>
-          <NextLink href={"/portfolio"}>
+          <NextLink href="/portfolio">
             <Button colorScheme="green" variant="outline">
               Portfolio
             </Button>
           </NextLink>
-          <NextLink href={"/contact"}>
+          <NextLink href="/contact">
             <Button colorScheme="green" variant="outline">
               Contact
             </Button>
@@ -33,6 +35,6 @@ const Page = () => {
       </HStack>
     </Box>
   );
-};
+}
 
 export default Page;

@@ -16,17 +16,19 @@ import {
   InputGroup,
   InputLeftElement,
   Textarea,
-} from "@chakra-ui/react";
-import { MdEmail, MdLocationOn, MdOutlineEmail } from "react-icons/md";
-import { BsGithub, BsDiscord, BsPerson, BsTwitter } from "react-icons/bs";
-import Bread from "@/pages/bread/index";
-import { useState } from "react";
-import axios from "axios";
+} from '@chakra-ui/react';
+import { MdEmail, MdLocationOn, MdOutlineEmail } from 'react-icons/md';
+import {
+  BsGithub, BsDiscord, BsPerson, BsTwitter,
+} from 'react-icons/bs';
+import Bread from '@/pages/bread/index';
+import { useState } from 'react';
+import axios from 'axios';
 
-const Page = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+function Page() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
   const isDisabled = !name || !email || !message;
 
   const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -39,17 +41,18 @@ const Page = () => {
     setMessage(e.target.value);
   };
   const buttonHandler = async () => {
-    try {
-      const { data } = await axios.post("/api/hello", {
+    await axios
+      .post('/api/mailer', {
         name,
         email,
         message,
+      })
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((err) => {
+        console.log(err.response);
       });
-
-      console.log("#OK", data);
-    } catch {
-      console.log("#Error");
-    }
   };
 
   return (
@@ -67,14 +70,20 @@ const Page = () => {
             rounded="md"
           >
             <Box p={4}>
-              <Wrap spacing={{ base: 20, sm: 3, md: 5, lg: 20 }}>
+              <Wrap spacing={{
+                base: 20, sm: 3, md: 5, lg: 20,
+              }}
+              >
                 <WrapItem>
                   <Box>
                     <Heading>Contact</Heading>
                     <Text mt={{ sm: 3, md: 3, lg: 5 }} color="gray.500">
                       Fill up the form below to contact
                     </Text>
-                    <Box py={{ base: 5, sm: 5, md: 8, lg: 10 }}>
+                    <Box py={{
+                      base: 5, sm: 5, md: 8, lg: 10,
+                    }}
+                    >
                       <VStack pl={0} spacing={3} alignItems="flex-start">
                         <Button
                           size="md"
@@ -82,7 +91,7 @@ const Page = () => {
                           width="300px"
                           variant="ghost"
                           color="blackAlpha.700"
-                          _hover={{ border: "2px solid #1C6FEB" }}
+                          _hover={{ border: '2px solid #1C6FEB' }}
                           leftIcon={<MdEmail color="#1970F1" size="20px" />}
                         >
                           hogehoge.fugafuga@example.com
@@ -93,7 +102,7 @@ const Page = () => {
                           width="110px"
                           variant="ghost"
                           color="blackAlpha.700"
-                          _hover={{ border: "2px solid #1C6FEB" }}
+                          _hover={{ border: '2px solid #1C6FEB' }}
                           leftIcon={
                             <MdLocationOn color="#1970F1" size="20px" />
                           }
@@ -112,8 +121,8 @@ const Page = () => {
                         aria-label="twitter"
                         variant="ghost"
                         size="lg"
-                        isRound={true}
-                        _hover={{ bg: "#0D74FF" }}
+                        isRound
+                        _hover={{ bg: '#0D74FF' }}
                         color="blackAlpha.700"
                         icon={<BsTwitter size="28px" />}
                       />
@@ -121,8 +130,8 @@ const Page = () => {
                         aria-label="github"
                         variant="ghost"
                         size="lg"
-                        isRound={true}
-                        _hover={{ bg: "#0D74FF" }}
+                        isRound
+                        _hover={{ bg: '#0D74FF' }}
                         color="blackAlpha.700"
                         icon={<BsGithub size="28px" />}
                       />
@@ -130,8 +139,8 @@ const Page = () => {
                         aria-label="discord"
                         variant="ghost"
                         size="lg"
-                        isRound={true}
-                        _hover={{ bg: "#0D74FF" }}
+                        isRound
+                        _hover={{ bg: '#0D74FF' }}
                         color="blackAlpha.700"
                         icon={<BsDiscord size="28px" />}
                       />
@@ -161,7 +170,7 @@ const Page = () => {
                             <FormLabel>Mail</FormLabel>
                             <InputGroup borderColor="#E0E1E7">
                               <InputLeftElement pointerEvents="none">
-                                {<MdOutlineEmail color="gray.800" />}
+                                <MdOutlineEmail color="gray.800" />
                               </InputLeftElement>
                               <Input
                                 type="email"
@@ -204,6 +213,6 @@ const Page = () => {
       </Container>
     </Box>
   );
-};
+}
 
 export default Page;

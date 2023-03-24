@@ -1,17 +1,18 @@
-import { ChakraProvider, extendTheme } from "@chakra-ui/react";
-import chakraTheme from "@chakra-ui/theme";
-import type { AppProps } from "next/app";
-import Header from "./header";
-import Head from "next/head";
+import { ChakraProvider, extendTheme } from '@chakra-ui/react';
+import chakraTheme from '@chakra-ui/theme';
+import type { AppProps } from 'next/app';
+import Head from 'next/head';
+import Header from './header';
 
-const { Heading, Form, FormLabel, Input, Checkbox, Link, Button } =
-  chakraTheme.components;
+const {
+  components: { Heading, Form, FormLabel, Input, Checkbox, Link, Button },
+} = chakraTheme;
 
 const theme = extendTheme({
   styles: {
     global: {
       body: {
-        backgroundColor: "blackAlpha.100",
+        backgroundColor: 'blackAlpha.100',
       },
     },
   },
@@ -26,9 +27,9 @@ const theme = extendTheme({
   },
 });
 
-const App = ({ Component, pageProps }: AppProps) => {
+function App({ Component, pageProps }: AppProps) {
   return (
-    <>
+    <div>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
@@ -42,10 +43,11 @@ const App = ({ Component, pageProps }: AppProps) => {
       </Head>
       <ChakraProvider theme={theme}>
         <Header />
+        {/* eslint-disable-next-line react/jsx-props-no-spreading */}
         <Component {...pageProps} />
       </ChakraProvider>
-    </>
+    </div>
   );
-};
+}
 
 export default App;

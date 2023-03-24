@@ -1,7 +1,7 @@
-import { Box } from "@chakra-ui/react";
-import Bread from "@/pages/bread/index";
+import { Box } from '@chakra-ui/react';
+import Bread from '@/pages/bread/index';
 
-const Page = () => {
+function Page() {
   return (
     <Box bg="white" px="15px" py="5px">
       <Bread title="Profile" />
@@ -15,9 +15,9 @@ const Page = () => {
         borderRadius="5px"
         boxShadow="base"
         rounded="md"
-      ></Box>
+      />
     </Box>
   );
-};
+}
 
 export default Page;

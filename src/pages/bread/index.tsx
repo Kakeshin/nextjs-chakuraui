@@ -1,10 +1,10 @@
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from "@chakra-ui/react";
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react';
 
 interface BreadcrumbInterface {
   title: string;
 }
 
-const Page = ({ title }: BreadcrumbInterface) => {
+function Page({ title }: BreadcrumbInterface) {
   return (
     <Breadcrumb>
       <BreadcrumbItem>
@@ -15,6 +15,6 @@ const Page = ({ title }: BreadcrumbInterface) => {
       </BreadcrumbItem>
     </Breadcrumb>
   );
-};
+}
 
 export default Page;
