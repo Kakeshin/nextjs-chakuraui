@@ -1,4 +1,5 @@
 import getHello from '@/data/api/getHello';
+import postHello from '@/data/api/postHello';
 import { HelloResponse } from '@/data/types/response/helloResponse';
 
 interface HelloRepositoryInterFace {
@@ -13,7 +14,7 @@ const helloRepository: HelloRepositoryInterFace = {
   },
 
   postHello: async () => {
-    const { name } = await getHello();
+    const { name } = await postHello();
     return { name };
   },
 };
