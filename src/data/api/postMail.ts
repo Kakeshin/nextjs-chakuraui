@@ -18,8 +18,6 @@ const postMail = async (
 
     return result.data;
   } catch (error) {
-    console.log(`env: ${process.env.BASE_URL}`);
-    console.error(error);
     return {
       name: `${error}`,
     };
