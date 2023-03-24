@@ -1,5 +1,5 @@
 export interface UserRequest {
   name: string;
-  address: string;
+  email: string;
   message: string;
 }

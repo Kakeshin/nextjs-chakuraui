@@ -3,7 +3,7 @@ import { UserRequest } from '@/data/types/request/getUserRequest';
 import { UserResponse } from '@/data/types/response/getUserResponse';
 
 interface UserRepositoryInterface {
-  fetchUser: (req: UserRequest) => Promise<UserResponse>
+  fetchUser: (req: UserRequest) => Promise<UserResponse>;
 }
 
 const UserRepository: UserRepositoryInterface = {

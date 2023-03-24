@@ -6,5 +6,9 @@
     "airbnb-typescript"
   ],
   "parserOptions": { "project": "./tsconfig.json" },
-  "rules": { "react/react-in-jsx-scope": "off", "object-curly-newline": "off" }
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "object-curly-newline": "off",
+    "@typescript-eslint/comma-dangle": "off"
+  }
 }
