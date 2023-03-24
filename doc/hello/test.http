@@ -1,0 +1,4 @@
+@HOST = https://kakeshin.vercel.app
+@LOCALHOST = http://localhost:3000
+
+GET {{HOST}}/api/hello

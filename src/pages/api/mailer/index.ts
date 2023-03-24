@@ -1,16 +1,16 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { UserResponse } from '@/data/types/response/getUserResponse';
-import UserRepository from '@/repository/userRepository';
+import { MailerResponse } from '@/data/types/response/mailerResponse';
+import mailerRepository from '@/repository/mailerRepository';
 
 const handler = async (
   req: NextApiRequest,
-  res: NextApiResponse<UserResponse>
+  res: NextApiResponse<MailerResponse>
 ) => {
   if (req.method !== 'POST') {
     res.status(405).send({ name: 'Only POST requests allowed' });
     return;
   }
-  const data = await UserRepository.fetchUser({
+  const data = await mailerRepository.postMail({
     name: req.body.name,
     email: req.body.email,
     message: req.body.message,
