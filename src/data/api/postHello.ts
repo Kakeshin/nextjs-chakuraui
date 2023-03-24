@@ -1,12 +1,12 @@
 import axios from 'axios';
 import { HelloResponse } from '@/data/types/response/helloResponse';
 
-const getHello = async (): Promise<HelloResponse> => {
+const postHello = async (): Promise<HelloResponse> => {
   const baseUrl = process.env.BASE_URL;
   const url = `${baseUrl}/hello`;
 
   try {
-    const result = await axios.get(url);
+    const result = await axios.post(url);
     return result.data;
   } catch (error) {
     return {
@@ -15,4 +15,4 @@ const getHello = async (): Promise<HelloResponse> => {
   }
 };
 
-export default getHello;
+export default postHello;
