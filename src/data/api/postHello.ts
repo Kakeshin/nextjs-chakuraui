@@ -3,7 +3,7 @@ import { HelloResponse } from '@/data/types/response/helloResponse';
 
 const postHello = async (): Promise<HelloResponse> => {
   const baseUrl = process.env.BASE_URL;
-  const url = `${baseUrl}/hello`;
+  const url = `${baseUrl}/postHello`;
 
   try {
     const result = await axios.post(url);
