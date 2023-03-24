@@ -40,7 +40,7 @@ function Page() {
   };
   const buttonHandler = async () => {
     await axios
-      .post('/api/mailer', {
+      .post('./api/mailer', {
         name,
         email,
         message,
