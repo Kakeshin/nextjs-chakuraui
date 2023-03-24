@@ -17,7 +17,7 @@ const getUser = async (userRequest: UserRequest): Promise<UserResponse> => {
     return result.data;
   } catch (error) {
     return {
-      name: `${error}`,
+      name: `Error:${error}`,
     };
   }
 };
