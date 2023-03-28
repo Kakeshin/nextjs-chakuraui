@@ -1,6 +1,4 @@
-import {
-  Heading, HStack, Box, Button,
-} from '@chakra-ui/react';
+import { Heading, HStack, Box, Button } from '@chakra-ui/react';
 import NextLink from 'next/link';
 
 function Page() {
@@ -11,23 +9,18 @@ function Page() {
           <Heading mr="20px">Kakeshin Dev</Heading>
         </NextLink>
         <Box>
-          <NextLink href="/">
-            <Button colorScheme="green" variant="outline">
-              Home
-            </Button>
-          </NextLink>
           <NextLink href="/profile">
-            <Button colorScheme="green" variant="outline">
+            <Button colorScheme="green" variant="outline" mx="5px">
               Profile
             </Button>
           </NextLink>
           <NextLink href="/portfolio">
-            <Button colorScheme="green" variant="outline">
+            <Button colorScheme="green" variant="outline" mx="5px">
               Portfolio
             </Button>
           </NextLink>
           <NextLink href="/contact">
-            <Button colorScheme="green" variant="outline">
+            <Button colorScheme="green" variant="outline" mx="5px">
               Contact
             </Button>
           </NextLink>
