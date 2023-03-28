@@ -9,8 +9,8 @@ interface HelloRepositoryInterFace {
 
 const helloRepository: HelloRepositoryInterFace = {
   getHello: async () => {
-    const { name } = await getHello();
-    return { name };
+    const result = await getHello();
+    return result;
   },
 
   postHello: async () => {
