@@ -5,15 +5,12 @@ const getGithubRepository = async (): Promise<GithubResponse> => {
   const url = `${process.env.BASE_URL}/github/me`;
   try {
     const result = await axios.get(url);
-    console.log('Axe Success');
-    console.log(result);
     return result.data;
   } catch (error) {
-    console.log('Axe Error');
     return {
-      html_url: '',
+      url: '',
       name: '',
-      twitter_username: '',
+      twitter: '',
       message: `${error}`,
     };
   }

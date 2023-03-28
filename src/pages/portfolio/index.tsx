@@ -5,11 +5,13 @@ import axios from 'axios';
 
 function Page() {
   const [name, setName] = useState('');
-  const [link, setLink] = useState('');
+  const [url, setUrl] = useState('');
+  const [twitter, setTwitter] = useState('');
   const handler = async () => {
-    const data = await axios.get('./api/github');
-    setLink(data.data.res.html_link);
-    setName(data.data.res.name);
+    const res = await (await axios.get('./api/github')).data;
+    setUrl(res.url);
+    setName(res.name);
+    setTwitter(res.twitter);
   };
 
   handler();
@@ -18,7 +20,8 @@ function Page() {
     <Box>
       <Bread title="Portfolio" />
       <Heading>{name}</Heading>
-      <Heading>{link}</Heading>
+      <Heading>{url}</Heading>
+      <Heading>{twitter}</Heading>
     </Box>
   );
 }

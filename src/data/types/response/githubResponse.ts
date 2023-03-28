@@ -1,6 +1,6 @@
 export interface GithubResponse {
-  html_url: string;
+  url: string;
   name: string;
-  twitter_username: string;
+  twitter: string;
   message: string;
 }
