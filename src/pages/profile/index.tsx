@@ -1,4 +1,4 @@
-import { Box, Heading } from '@chakra-ui/react';
+import { Box, Heading, HStack } from '@chakra-ui/react';
 import Bread from '@/pages/bread/index';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
@@ -36,9 +36,19 @@ function Page() {
         boxShadow="base"
         rounded="md"
       >
-        <Heading>{state?.name}</Heading>
-        <Heading>{state?.url}</Heading>
-        <Heading>{state?.twitter}</Heading>
+        <HStack>
+          <Heading>Name: </Heading>
+          <Heading>{state?.name}</Heading>
+        </HStack>
+        <HStack>
+          {' '}
+          <Heading>Github: </Heading>
+          <Heading>{state?.url}</Heading>
+        </HStack>
+        <HStack>
+          <Heading>Twitter: </Heading>
+          <Heading>{state?.twitter}</Heading>
+        </HStack>
       </Box>
     </Box>
   );
