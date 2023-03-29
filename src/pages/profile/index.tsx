@@ -3,10 +3,14 @@ import Bread from '@/pages/bread/index';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
+interface StateInterface {
+  name: string;
+  url: string;
+  twitter: string;
+}
+
 function Page() {
-  const [name, setName] = useState('');
-  const [url, setUrl] = useState('');
-  const [twitter, setTwitter] = useState('');
+  const [state, setState] = useState<StateInterface>();
 
   useEffect(() => {
     const api = async () => {
@@ -14,9 +18,7 @@ function Page() {
       return data;
     };
     api().then((res) => {
-      setUrl(res.url);
-      setName(res.name);
-      setTwitter(res.twitter);
+      setState({ name: res.name, url: res.url, twitter: res.twitter });
     });
   }, []);
 
@@ -34,9 +36,9 @@ function Page() {
         boxShadow="base"
         rounded="md"
       >
-        <Heading>{name}</Heading>
-        <Heading>{url}</Heading>
-        <Heading>{twitter}</Heading>
+        <Heading>{state?.name}</Heading>
+        <Heading>{state?.url}</Heading>
+        <Heading>{state?.twitter}</Heading>
       </Box>
     </Box>
   );
