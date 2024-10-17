@@ -8,8 +8,6 @@ import {
   Text,
   VStack,
   Button,
-  HStack,
-  IconButton,
   FormControl,
   FormLabel,
   Input,
@@ -17,8 +15,8 @@ import {
   InputLeftElement,
   Textarea,
 } from '@chakra-ui/react';
-import { MdEmail, MdLocationOn, MdOutlineEmail } from 'react-icons/md';
-import { BsGithub, BsDiscord, BsPerson, BsTwitter } from 'react-icons/bs';
+import { MdOutlineEmail } from 'react-icons/md';
+import { BsPerson } from 'react-icons/bs';
 import Bread from '@/pages/bread/index';
 import { useState } from 'react';
 import axios from 'axios';
