@@ -6,7 +6,7 @@ function Page() {
     <Box bg="white" mb="1px">
       <HStack p="10px">
         <NextLink href="/">
-          <Heading mr="20px">Kakeshin Dev</Heading>
+          <Heading mr="20px">Kakeshin Studio</Heading>
         </NextLink>
         <Box>
           <NextLink href="/profile">
