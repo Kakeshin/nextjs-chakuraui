@@ -86,7 +86,7 @@ function Page() {
                         lg: 10,
                       }}
                     >
-                      <VStack pl={0} spacing={3} alignItems="flex-start">
+                      {/* <VStack pl={0} spacing={3} alignItems="flex-start">
                         <Button
                           size="md"
                           height="48px"
@@ -111,9 +111,9 @@ function Page() {
                         >
                           Japan
                         </Button>
-                      </VStack>
+                      </VStack> */}
                     </Box>
-                    <HStack
+                    {/* <HStack
                       mt={{ lg: 10, md: 10 }}
                       spacing={5}
                       px={5}
@@ -146,7 +146,7 @@ function Page() {
                         color="blackAlpha.700"
                         icon={<BsDiscord size="28px" />}
                       />
-                    </HStack>
+                    </HStack> */}
                   </Box>
                 </WrapItem>
                 <WrapItem>
